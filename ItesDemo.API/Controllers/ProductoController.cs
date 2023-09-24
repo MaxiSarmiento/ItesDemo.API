@@ -9,7 +9,7 @@ namespace ItesDemo.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-
+[Authorize]
 public class ProductoController : ControllerBase
 {
     private readonly ApiDbContext context;
@@ -18,7 +18,7 @@ public class ProductoController : ControllerBase
     {
         this.context = context;
     }
-  
+
     [HttpGet]
     public async Task<ActionResult<List<Producto>>> GetProductsAsync()
     {
